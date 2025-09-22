@@ -1,8 +1,8 @@
-"use strict";
-console.log('Salom duyo');
-console.log(false + 34 + true);
-console.log("TypeScrpit Qo'shildi");
-console.log("TypeScrpit Qo'shildi");
-console.log("TypeScrpit Qo'shildi");
-console.log("TypeScrpit Qo'shildi");
-//# sourceMappingURL=index.js.map
+// function pow(x: number, y: number): number {
+// 	return x ** y;
+// }
+function pow(x, y) {
+    return "".concat(x, "**").concat(y, "=").concat(Math.pow(x, y));
+}
+console.log(pow(4, 2));
+var add = function (x, y) { return x + y; };
