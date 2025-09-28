@@ -76,4 +76,54 @@ enum Gender {
 	Female = 'Fotima',
 }
 
-console.log(Gender.Female);
+// console.log(Gender.Female);
+
+class Inson {
+	_name: string = 'Kamron';
+	_age: number = 18;
+
+	constructor(name: string, age: number) {
+		this._name = name;
+		this._age = age;
+	}
+
+	info(value: number): string {
+		return `${this._name} - ${this._age + value} da`;
+	}
+
+	static isFlaying = false;
+	static description(): string {
+		return `Bu Klaslar haqida ma'lumot......`;
+	}
+	get name(): string {
+		return this._name;
+	}
+
+	set name(value: string) {
+		this.name = value;
+	}
+
+	get age(): number {
+		return this._age;
+	}
+
+	set age(value: number) {
+		if (value > 0 && value < 45) {
+			this._age = value;
+		} else {
+			throw new Error('Siz bu yoshda emassiz!....');
+		}
+	}
+}
+
+const davron: Inson = new Inson('Davron', 39);
+const kamron: Inson = new Inson('Kamron', 18);
+console.log(davron.info(1));
+console.log(Inson.description());
+
+// davron.age = 44;
+davron.age = 46;
+
+console.log(davron._age);
+
+// console.log(kamron);
