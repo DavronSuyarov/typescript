@@ -60,70 +60,95 @@
 // }
 // ------------------------------//  Arrays Tuples & enum //--------------------------
 
-let a = [];
-// a=["sdsfsd", 23, {"djfhkjdf"}, true, undefined, null]
+// let a = [];
+// // a=["sdsfsd", 23, {"djfhkjdf"}, true, undefined, null]
 
-const d: number[] = [2, 2, 3, 4];
+// const d: number[] = [2, 2, 3, 4];
 
-const f: Array<number> = [45, 67];
+// const f: Array<number> = [45, 67];
 
-let g: [number, string];
+// let g: [number, string];
 
-g = [12, 'dsbfd'];
+// g = [12, 'dsbfd'];
 
-enum Gender {
-	Male,
-	Female = 'Fotima',
-}
+// enum Gender {
+// 	Male,
+// 	Female = 'Fotima',
+// }
 
-// console.log(Gender.Female);
+// // console.log(Gender.Female);
 
-class Inson {
-	_name: string = 'Kamron';
-	_age: number = 18;
+// class Inson {
+// 	_name: string = 'Kamron';
+// 	_age: number = 18;
+
+// 	constructor(name: string, age: number) {
+// 		this._name = name;
+// 		this._age = age;
+// 	}
+
+// 	info(value: number): string {
+// 		return `${this._name} - ${this._age + value} da`;
+// 	}
+
+// 	static isFlaying = false;
+// 	static description(): string {
+// 		return `Bu Klaslar haqida ma'lumot......`;
+// 	}
+// 	get name(): string {
+// 		return this._name;
+// 	}
+
+// 	set name(value: string) {
+// 		this.name = value;
+// 	}
+
+// 	get age(): number {
+// 		return this._age;
+// 	}
+
+// 	set age(value: number) {
+// 		if (value > 0 && value < 45) {
+// 			this._age = value;
+// 		} else {
+// 			throw new Error('Siz bu yoshda emassiz!....');
+// 		}
+// 	}
+// }
+
+// const davron: Inson = new Inson('Davron', 39);
+// const kamron: Inson = new Inson('Kamron', 18);
+// console.log(davron.info(1));
+// console.log(Inson.description());
+
+// // davron.age = 44;
+// davron.age = 46;
+
+// console.log(davron._age);
+
+// // console.log(kamron);
+
+class Person {
+	_name: string = '';
+	_age: number = 0;
 
 	constructor(name: string, age: number) {
 		this._name = name;
 		this._age = age;
 	}
+}
 
-	info(value: number): string {
-		return `${this._name} - ${this._age + value} da`;
-	}
-
-	static isFlaying = false;
-	static description(): string {
-		return `Bu Klaslar haqida ma'lumot......`;
-	}
-	get name(): string {
-		return this._name;
-	}
-
-	set name(value: string) {
-		this.name = value;
-	}
-
-	get age(): number {
-		return this._age;
-	}
-
-	set age(value: number) {
-		if (value > 0 && value < 45) {
-			this._age = value;
-		} else {
-			throw new Error('Siz bu yoshda emassiz!....');
-		}
+class Student extends Person {
+	_group: string = '';
+	_course: number = 0;
+	constructor(name: string, age: number, group: string, course: number) {
+		super(name, age);
+		this._group = group;
+		this._course = course;
 	}
 }
 
-const davron: Inson = new Inson('Davron', 39);
-const kamron: Inson = new Inson('Kamron', 18);
-console.log(davron.info(1));
-console.log(Inson.description());
-
-// davron.age = 44;
-davron.age = 46;
-
-console.log(davron._age);
-
-// console.log(kamron);
+const umar: Person = new Person('Umar', 3);
+console.log(umar);
+const kamron: Student = new Student('Kamron', 18, '334-group', 1);
+console.log(kamron);
