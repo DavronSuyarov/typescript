@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // // function pow(x: number, y: number): number {
 // // 	return x ** y;
 // // }
@@ -97,25 +97,58 @@
 // davron.age = 46;
 // console.log(davron._age);
 // // console.log(kamron);
+interface IPerson {
+	_name: string;
+	_age: number;
+	sayHello(): string;
+}
+class Person implements IPerson {}
 class Person {
-    constructor(name, age) {
-        this._name = '';
-        this._age = 0;
-        this._name = name;
-        this._age = age;
-    }
+	constructor(name, age) {
+		this._name = '';
+		this._age = 0;
+		this._name = name;
+		this._age = age;
+	}
+	sayHello() {
+		console.log(`Assalomu alaykum Mening ismim ${this._name}!`);
+	}
 }
 class Student extends Person {
-    constructor(name, age, group, course) {
-        super(name, age);
-        this._group = '';
-        this._course = 0;
-        this._group = group;
-        this._course = course;
-    }
+	constructor(name, age, group, course) {
+		super(name, age);
+		this._group = '';
+		this._course = 0;
+		this._group = group;
+		this._course = course;
+	}
+	sayHello() {
+		const otaVoris = super.sayHello();
+		return `${otaVoris} Men ${this._course}-kursning, ${this._group}da ta'lim olaman!`;
+	}
+}
+class Teacher extends Person {
+	constructor(name, age, subject) {
+		super(name, age);
+		this.subject = [];
+		this.subject = subject;
+	}
 }
 const umar = new Person('Umar', 3);
 console.log(umar);
+console.log(umar.sayHello());
 const kamron = new Student('Kamron', 18, '334-group', 1);
 console.log(kamron);
+console.log(kamron.sayHello());
+const newUmar = umar;
+console.log(newUmar);
+console.log(newUmar.sayHello());
+const sayyod = new Teacher('Sayyod', 30, [
+	'React',
+	'Typescript',
+	'JavaScript',
+	'node.js',
+]);
+console.log(sayyod);
+console.log(sayyod.sayHello());
 //# sourceMappingURL=index.js.map

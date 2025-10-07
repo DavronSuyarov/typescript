@@ -136,6 +136,10 @@ class Person {
 		this._name = name;
 		this._age = age;
 	}
+
+	sayHello(): void {
+		console.log(`Assalomu alaykum Mening ismim ${this._name}!`);
+	}
 }
 
 class Student extends Person {
@@ -146,9 +150,38 @@ class Student extends Person {
 		this._group = group;
 		this._course = course;
 	}
+	sayHello(): string {
+		const otaVoris = super.sayHello();
+		return `${otaVoris} Men ${this._course}-kursning, ${this._group}da ta'lim olaman!`;
+	}
+}
+
+class Teacher extends Person {
+	subject: string[] = [];
+
+	constructor(name: string, age: number, subject: string[]) {
+		super(name, age);
+		this.subject = subject;
+	}
 }
 
 const umar: Person = new Person('Umar', 3);
 console.log(umar);
+console.log(umar.sayHello());
+
 const kamron: Student = new Student('Kamron', 18, '334-group', 1);
 console.log(kamron);
+console.log(kamron.sayHello());
+
+const newUmar: Person = <Person>umar;
+console.log(newUmar);
+console.log(newUmar.sayHello());
+
+const sayyod: Teacher = new Teacher('Sayyod', 30, [
+	'React',
+	'Typescript',
+	'JavaScript',
+	'node.js',
+]);
+console.log(sayyod);
+console.log(sayyod.sayHello());
