@@ -197,248 +197,276 @@
 // console.log(rasul);
 // console.log(rasul.sayHello());
 //=================================================================
-class ResistorColor {
-	COLORS: string[] = [
-		'black',
-		'brown',
-		'red',
-		'orange',
-		'yellow',
-		'green',
-		'blue',
-		'violet',
-		'grey',
-		'white',
-	];
+// class ResistorColor {
+// 	COLORS: string[] = [
+// 		'black',
+// 		'brown',
+// 		'red',
+// 		'orange',
+// 		'yellow',
+// 		'green',
+// 		'blue',
+// 		'violet',
+// 		'grey',
+// 		'white',
+// 	];
 
-	colorCode(color: string): number {
-		return this.COLORS.indexOf(color);
+// 	colorCode(color: string): number {
+// 		return this.COLORS.indexOf(color);
+// 	}
+
+// 	colors(): string[] {
+// 		return this.COLORS;
+// 	}
+// }
+
+// const resistor: ResistorColor = new ResistorColor();
+
+// // console.log(resistor.colorCode('green'));
+// // console.log(resistor.colors());
+
+// //=================================================================
+// //Pangramm (The quick brown fox jumps over the lazy dog.)
+// export function isPangram(sentence: string): boolean {
+// 	const letters = new Set(sentence.toLowerCase().replace(/[^a-z]/g, ''));
+
+// 	return letters.size === 26;
+// }
+
+// export const isPangarmArrow = (sentence: string): boolean =>
+// 	new Set(sentence.toLowerCase().replace(/[^a-z]/g, '')).size === 26;
+// console.log(isPangarmArrow);
+// //=================================================================
+// export function toRna(dna: string): string {
+// 	const map: { [key: string]: string } = {
+// 		G: 'C',
+// 		C: 'G',
+// 		T: 'A',
+// 		A: 'U',
+// 	};
+// 	return dna
+// 		.split('')
+// 		.map(letter => map[letter])
+// 		.join('');
+// }
+
+// export const toRna2 = (dna: string): string =>
+// 	dna
+// 		.split('')
+// 		.map(l => ({ G: 'C', C: 'G', T: 'A', A: 'U' })[l])
+// 		.join('');
+// //ASOSIY ECHIM SHU
+// const DNAtoRNA = new Map<string, string>([
+// 	['G', 'C'],
+// 	['C', 'G'],
+// 	['T', 'A'],
+// 	['A', 'U'],
+// ]);
+// export function toRna3(dna: string): string {
+// 	return [...dna]
+// 		.map(l => {
+// 			if (DNAtoRNA.has(l)) return DNAtoRNA.get(l);
+// 			else throw new Error('Invalid input DNA.');
+// 		})
+// 		.join('');
+// }
+// class DNA {
+// 	static toRNA1(dna: string): string {
+// 		const map: Record<string, string> = {
+// 			G: 'C',
+// 			C: 'G',
+// 			T: 'A',
+// 			A: 'U',
+// 		};
+// 		return dna
+// 			.split('')
+// 			.map(n => map[n])
+// 			.join('');
+// 	}
+// }
+// // console.log(toRna('GCTA'));
+// //=================================================================
+// // ANIQ YECHIM
+// export class DnDCharacter {
+// 	strength: number;
+// 	dexterity: number;
+// 	constitution: number;
+// 	intelligence: number;
+// 	wisdom: number;
+// 	charisma: number;
+
+// 	hitpoints: number;
+
+// 	constructor() {
+// 		this.strength = DnDCharacter.generateAbilityScore();
+// 		this.dexterity = DnDCharacter.generateAbilityScore();
+// 		this.constitution = DnDCharacter.generateAbilityScore();
+// 		this.intelligence = DnDCharacter.generateAbilityScore();
+// 		this.wisdom = DnDCharacter.generateAbilityScore();
+// 		this.charisma = DnDCharacter.generateAbilityScore();
+
+// 		this.hitpoints = 10 + DnDCharacter.getModifierFor(this.constitution);
+// 	}
+// 	public static generateAbilityScore(): number {
+// 		let dice = [...Array(4)].map(_ => DnDCharacter.rollDie());
+// 		dice.sort((a, b) => a - b);
+// 		return dice.slice(1).reduce((a, b) => a + b);
+// 	}
+// 	public static rollDie(): number {
+// 		return Math.floor(Math.random() * 6) + 1;
+// 	}
+// 	public static getModifierFor(score: number): number {
+// 		return Math.floor((score - 10) / 2);
+// 	}
+// }
+// //=================================================================
+// //=================================================================
+// export function hello(): string {
+// 	return 'Hello, World!';
+// }
+// // Arrow function
+// export const helloArrow = (): string => 'Hello, World!';
+// //=================================================================
+// class twoFer {
+// 	_name: string = '';
+
+// 	constructor(name: string) {
+// 		this._name = name;
+// 	}
+// 	seyOneMe(): string {
+// 		return `One for ${this._name}, One for me`;
+// 	}
+// }
+// const forYou: twoFer = new twoFer('you');
+// console.log(forYou.seyOneMe());
+
+// export function twoFer2(name?: string): string {
+// 	return `One for ${name || 'you'}, one for me`;
+// }
+
+// export function twoFer3(name: string = 'you'): string {
+// 	return `One for ${name}, one for me.`;
+// }
+// // Arrow function
+
+// export const twoFer4 = (name: string = 'you'): string =>
+// 	`One for ${name}, one for me.`;
+
+// // export const sdf=(name:string ='you'):string{
+// //     return `One for${name}, one for me.`
+
+// //=================================================================
+// //=================================================================
+// class Year {
+// 	year: number;
+
+// 	constructor(year: number) {
+// 		this.year = year;
+// 	}
+// 	isLeap(): boolean {
+// 		if (this.year % 4 !== 0) return false;
+// 		if (this.year % 100 !== 0) return true;
+// 		return this.year % 400 === 0;
+// 	}
+// }
+// // const y1: Year = new Year(1997);
+// // console.log(y1.isLeap());
+// // const y2: Year = new Year(1900);
+// // console.log(y2.isLeap());
+// // const y3: Year = new Year(2000);
+// // console.log(y3.isLeap());
+
+// // Function type
+
+// export function isLeap(year: number): boolean {
+// 	return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+// }
+// // Arrow function
+// export const isLeapArrow = (year: number): boolean =>
+// 	(year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+// // console.log(isLeapArrow);
+
+// // ==========================//================DARTS GAMES===========//============================
+
+// export const score = (x = 0, y = 0) => {
+// 	const cordinates = x ** 2 + y ** 2;
+// 	return cordinates > 100 ? 0 : cordinates > 25 ? 1 : cordinates > 1 ? 5 : 10;
+// };
+
+// export class Darts {
+// 	static score(x = 0, y = 0) {
+// 		const cordinates = x ** 2 + y ** 2;
+// 		return cordinates > 100 ? 0 : cordinates > 25 ? 1 : cordinates > 1 ? 5 : 10;
+// 	}
+// }
+
+// function reversed(str: string): string {
+// 	return str.split('').reverse().join('');
+// }
+
+// // ==========================//================LINE UP===========//============================
+
+// export function format(name: string, number: number): string {
+// 	let suffix = 'th';
+// 	if (number % 100 < 11 || number % 100 > 13) {
+// 		if (number % 10 === 1) suffix = 'st';
+// 		else if (number % 10 === 2) suffix = 'nd';
+// 		else if (number % 10 === 3) suffix = 'rd';
+// 	}
+// 	return `${name}, you are the ${number}${suffix} customer we serve today, Thank you!`;
+// }
+
+// // ==========================//================SPACE AGE PROBLEM===========//============================
+
+// export const PLANENT: Record<string, number> = {
+// 	mercury: 0.2408467,
+// 	venus: 0.61519726,
+// 	earth: 1.0,
+// 	mars: 1.8808158,
+// 	jupiter: 11.862615,
+// 	saturn: 29.447498,
+// 	uranus: 84.016846,
+// 	neptune: 164.79132,
+// };
+
+// export function age(planetName: string, earthAge: number): number {
+// 	const period = PLANENT[planetName];
+// 	return +(earthAge / 35_557_600 / period).toFixed(2);
+// }
+
+// // ==========================//================REVERSE PROBLEM===========//============================
+
+// export function reverse(str: string): string {
+// 	return str.split('').reverse().join('');
+// }
+
+// export const teskari = (harf: string): string =>
+// 	harf.split('').reverse().join('');
+
+export function reversed(mgs: string): string {
+	return [...mgs].reverse().join('');
+}
+
+// ==========================//================ BOB PROBLEMS ===========//============================
+export function hey(message: string): string {
+	const trimmed = message.trim();
+	if (trimmed === '') {
+		return 'Fine. Be that way!';
 	}
 
-	colors(): string[] {
-		return this.COLORS;
+	const lastChart = trimmed.charAt(trimmed.length - 1);
+	const isQuestion = lastChart === '?';
+
+	const hasLetters = trimmed.toLowerCase() !== trimmed.toUpperCase();
+	const isYelling = trimmed === trimmed.toUpperCase() && hasLetters;
+	if (isQuestion && isYelling) {
+		return "Calm down, I know what I'm doing!";
 	}
-}
-
-const resistor: ResistorColor = new ResistorColor();
-
-// console.log(resistor.colorCode('green'));
-// console.log(resistor.colors());
-
-//=================================================================
-//Pangramm (The quick brown fox jumps over the lazy dog.)
-export function isPangram(sentence: string): boolean {
-	const letters = new Set(sentence.toLowerCase().replace(/[^a-z]/g, ''));
-
-	return letters.size === 26;
-}
-
-export const isPangarmArrow = (sentence: string): boolean =>
-	new Set(sentence.toLowerCase().replace(/[^a-z]/g, '')).size === 26;
-console.log(isPangarmArrow);
-//=================================================================
-export function toRna(dna: string): string {
-	const map: { [key: string]: string } = {
-		G: 'C',
-		C: 'G',
-		T: 'A',
-		A: 'U',
-	};
-	return dna
-		.split('')
-		.map(letter => map[letter])
-		.join('');
-}
-
-export const toRna2 = (dna: string): string =>
-	dna
-		.split('')
-		.map(l => ({ G: 'C', C: 'G', T: 'A', A: 'U' })[l])
-		.join('');
-//ASOSIY ECHIM SHU
-const DNAtoRNA = new Map<string, string>([
-	['G', 'C'],
-	['C', 'G'],
-	['T', 'A'],
-	['A', 'U'],
-]);
-export function toRna3(dna: string): string {
-	return [...dna]
-		.map(l => {
-			if (DNAtoRNA.has(l)) return DNAtoRNA.get(l);
-			else throw new Error('Invalid input DNA.');
-		})
-		.join('');
-}
-class DNA {
-	static toRNA1(dna: string): string {
-		const map: Record<string, string> = {
-			G: 'C',
-			C: 'G',
-			T: 'A',
-			A: 'U',
-		};
-		return dna
-			.split('')
-			.map(n => map[n])
-			.join('');
+	if (isYelling) {
+		return 'Whoa, chill out!';
 	}
-}
-// console.log(toRna('GCTA'));
-//=================================================================
-// ANIQ YECHIM
-export class DnDCharacter {
-	strength: number;
-	dexterity: number;
-	constitution: number;
-	intelligence: number;
-	wisdom: number;
-	charisma: number;
-
-	hitpoints: number;
-
-	constructor() {
-		this.strength = DnDCharacter.generateAbilityScore();
-		this.dexterity = DnDCharacter.generateAbilityScore();
-		this.constitution = DnDCharacter.generateAbilityScore();
-		this.intelligence = DnDCharacter.generateAbilityScore();
-		this.wisdom = DnDCharacter.generateAbilityScore();
-		this.charisma = DnDCharacter.generateAbilityScore();
-
-		this.hitpoints = 10 + DnDCharacter.getModifierFor(this.constitution);
+	if (isQuestion) {
+		return 'Sure.';
 	}
-	public static generateAbilityScore(): number {
-		let dice = [...Array(4)].map(_ => DnDCharacter.rollDie());
-		dice.sort((a, b) => a - b);
-		return dice.slice(1).reduce((a, b) => a + b);
-	}
-	public static rollDie(): number {
-		return Math.floor(Math.random() * 6) + 1;
-	}
-	public static getModifierFor(score: number): number {
-		return Math.floor((score - 10) / 2);
-	}
+	return 'Whatever.';
 }
-//=================================================================
-//=================================================================
-export function hello(): string {
-	return 'Hello, World!';
-}
-// Arrow function
-export const helloArrow = (): string => 'Hello, World!';
-//=================================================================
-class twoFer {
-	_name: string = '';
-
-	constructor(name: string) {
-		this._name = name;
-	}
-	seyOneMe(): string {
-		return `One for ${this._name}, One for me`;
-	}
-}
-const forYou: twoFer = new twoFer('you');
-console.log(forYou.seyOneMe());
-
-export function twoFer2(name?: string): string {
-	return `One for ${name || 'you'}, one for me`;
-}
-
-export function twoFer3(name: string = 'you'): string {
-	return `One for ${name}, one for me.`;
-}
-// Arrow function
-
-export const twoFer4 = (name: string = 'you'): string =>
-	`One for ${name}, one for me.`;
-
-// export const sdf=(name:string ='you'):string{
-//     return `One for${name}, one for me.`
-
-//=================================================================
-//=================================================================
-class Year {
-	year: number;
-
-	constructor(year: number) {
-		this.year = year;
-	}
-	isLeap(): boolean {
-		if (this.year % 4 !== 0) return false;
-		if (this.year % 100 !== 0) return true;
-		return this.year % 400 === 0;
-	}
-}
-// const y1: Year = new Year(1997);
-// console.log(y1.isLeap());
-// const y2: Year = new Year(1900);
-// console.log(y2.isLeap());
-// const y3: Year = new Year(2000);
-// console.log(y3.isLeap());
-
-// Function type
-
-export function isLeap(year: number): boolean {
-	return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
-}
-// Arrow function
-export const isLeapArrow = (year: number): boolean =>
-	(year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
-// console.log(isLeapArrow);
-
-// ==========================//================DARTS GAMES===========//============================
-
-export const score = (x = 0, y = 0) => {
-	const cordinates = x ** 2 + y ** 2;
-	return cordinates > 100 ? 0 : cordinates > 25 ? 1 : cordinates > 1 ? 5 : 10;
-};
-
-export class Darts {
-	static score(x = 0, y = 0) {
-		const cordinates = x ** 2 + y ** 2;
-		return cordinates > 100 ? 0 : cordinates > 25 ? 1 : cordinates > 1 ? 5 : 10;
-	}
-}
-
-function reversed(str: string): string {
-	return str.split('').reverse().join('');
-}
-
-// ==========================//================LINE UP===========//============================
-
-export function format(name: string, number: number): string {
-	let suffix = 'th';
-	if (number % 100 < 11 || number % 100 > 13) {
-		if (number % 10 === 1) suffix = 'st';
-		else if (number % 10 === 2) suffix = 'nd';
-		else if (number % 10 === 3) suffix = 'rd';
-	}
-	return `${name}, you are the ${number}${suffix} customer we serve today, Thank you!`;
-}
-
-// ==========================//================SPACE AGE PROBLEM===========//============================
-
-export const PLANENT: Record<string, number> = {
-	mercury: 0.2408467,
-	venus: 0.61519726,
-	earth: 1.0,
-	mars: 1.8808158,
-	jupiter: 11.862615,
-	saturn: 29.447498,
-	uranus: 84.016846,
-	neptune: 164.79132,
-};
-
-export function age(planetName: string, earthAge: number): number {
-	const period = PLANENT[planetName];
-	return +(earthAge / 35_557_600 / period).toFixed(2);
-}
-
-// ==========================//================REVERSE PROBLEM===========//============================
-
-export function reverse(str: string): string {
-	return str.split('').reverse().join('');
-}
-
-export const teskari = (harf: string): string =>
-	harf.split('').reverse().join('');
