@@ -1,17 +1,7 @@
 "use strict";
 // // Variable larni e'lon qilish
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.teskari = exports.PLANENT = exports.Darts = exports.score = exports.isLeapArrow = exports.twoFer4 = exports.helloArrow = exports.DnDCharacter = exports.toRna2 = exports.isPangarmArrow = void 0;
-exports.isPangram = isPangram;
-exports.toRna = toRna;
-exports.toRna3 = toRna3;
-exports.hello = hello;
-exports.twoFer2 = twoFer2;
-exports.twoFer3 = twoFer3;
-exports.isLeap = isLeap;
-exports.format = format;
-exports.age = age;
-exports.reverse = reverse;
+exports.reversed = reversed;
 // let a: number; // yoki number=13 ds чам бо'лади
 // a = 13;
 // let b: string = 'matn';
@@ -171,222 +161,235 @@ exports.reverse = reverse;
 // console.log(rasul);
 // console.log(rasul.sayHello());
 //=================================================================
-class ResistorColor {
-    constructor() {
-        this.COLORS = [
-            'black',
-            'brown',
-            'red',
-            'orange',
-            'yellow',
-            'green',
-            'blue',
-            'violet',
-            'grey',
-            'white',
-        ];
+// class ResistorColor {
+// 	COLORS: string[] = [
+// 		'black',
+// 		'brown',
+// 		'red',
+// 		'orange',
+// 		'yellow',
+// 		'green',
+// 		'blue',
+// 		'violet',
+// 		'grey',
+// 		'white',
+// 	];
+// 	colorCode(color: string): number {
+// 		return this.COLORS.indexOf(color);
+// 	}
+// 	colors(): string[] {
+// 		return this.COLORS;
+// 	}
+// }
+// const resistor: ResistorColor = new ResistorColor();
+// // console.log(resistor.colorCode('green'));
+// // console.log(resistor.colors());
+// //=================================================================
+// //Pangramm (The quick brown fox jumps over the lazy dog.)
+// export function isPangram(sentence: string): boolean {
+// 	const letters = new Set(sentence.toLowerCase().replace(/[^a-z]/g, ''));
+// 	return letters.size === 26;
+// }
+// export const isPangarmArrow = (sentence: string): boolean =>
+// 	new Set(sentence.toLowerCase().replace(/[^a-z]/g, '')).size === 26;
+// console.log(isPangarmArrow);
+// //=================================================================
+// export function toRna(dna: string): string {
+// 	const map: { [key: string]: string } = {
+// 		G: 'C',
+// 		C: 'G',
+// 		T: 'A',
+// 		A: 'U',
+// 	};
+// 	return dna
+// 		.split('')
+// 		.map(letter => map[letter])
+// 		.join('');
+// }
+// export const toRna2 = (dna: string): string =>
+// 	dna
+// 		.split('')
+// 		.map(l => ({ G: 'C', C: 'G', T: 'A', A: 'U' })[l])
+// 		.join('');
+// //ASOSIY ECHIM SHU
+// const DNAtoRNA = new Map<string, string>([
+// 	['G', 'C'],
+// 	['C', 'G'],
+// 	['T', 'A'],
+// 	['A', 'U'],
+// ]);
+// export function toRna3(dna: string): string {
+// 	return [...dna]
+// 		.map(l => {
+// 			if (DNAtoRNA.has(l)) return DNAtoRNA.get(l);
+// 			else throw new Error('Invalid input DNA.');
+// 		})
+// 		.join('');
+// }
+// class DNA {
+// 	static toRNA1(dna: string): string {
+// 		const map: Record<string, string> = {
+// 			G: 'C',
+// 			C: 'G',
+// 			T: 'A',
+// 			A: 'U',
+// 		};
+// 		return dna
+// 			.split('')
+// 			.map(n => map[n])
+// 			.join('');
+// 	}
+// }
+// // console.log(toRna('GCTA'));
+// //=================================================================
+// // ANIQ YECHIM
+// export class DnDCharacter {
+// 	strength: number;
+// 	dexterity: number;
+// 	constitution: number;
+// 	intelligence: number;
+// 	wisdom: number;
+// 	charisma: number;
+// 	hitpoints: number;
+// 	constructor() {
+// 		this.strength = DnDCharacter.generateAbilityScore();
+// 		this.dexterity = DnDCharacter.generateAbilityScore();
+// 		this.constitution = DnDCharacter.generateAbilityScore();
+// 		this.intelligence = DnDCharacter.generateAbilityScore();
+// 		this.wisdom = DnDCharacter.generateAbilityScore();
+// 		this.charisma = DnDCharacter.generateAbilityScore();
+// 		this.hitpoints = 10 + DnDCharacter.getModifierFor(this.constitution);
+// 	}
+// 	public static generateAbilityScore(): number {
+// 		let dice = [...Array(4)].map(_ => DnDCharacter.rollDie());
+// 		dice.sort((a, b) => a - b);
+// 		return dice.slice(1).reduce((a, b) => a + b);
+// 	}
+// 	public static rollDie(): number {
+// 		return Math.floor(Math.random() * 6) + 1;
+// 	}
+// 	public static getModifierFor(score: number): number {
+// 		return Math.floor((score - 10) / 2);
+// 	}
+// }
+// //=================================================================
+// //=================================================================
+// export function hello(): string {
+// 	return 'Hello, World!';
+// }
+// // Arrow function
+// export const helloArrow = (): string => 'Hello, World!';
+// //=================================================================
+// class twoFer {
+// 	_name: string = '';
+// 	constructor(name: string) {
+// 		this._name = name;
+// 	}
+// 	seyOneMe(): string {
+// 		return `One for ${this._name}, One for me`;
+// 	}
+// }
+// const forYou: twoFer = new twoFer('you');
+// console.log(forYou.seyOneMe());
+// export function twoFer2(name?: string): string {
+// 	return `One for ${name || 'you'}, one for me`;
+// }
+// export function twoFer3(name: string = 'you'): string {
+// 	return `One for ${name}, one for me.`;
+// }
+// // Arrow function
+// export const twoFer4 = (name: string = 'you'): string =>
+// 	`One for ${name}, one for me.`;
+// // export const sdf=(name:string ='you'):string{
+// //     return `One for${name}, one for me.`
+// //=================================================================
+// //=================================================================
+// class Year {
+// 	year: number;
+// 	constructor(year: number) {
+// 		this.year = year;
+// 	}
+// 	isLeap(): boolean {
+// 		if (this.year % 4 !== 0) return false;
+// 		if (this.year % 100 !== 0) return true;
+// 		return this.year % 400 === 0;
+// 	}
+// }
+// // const y1: Year = new Year(1997);
+// // console.log(y1.isLeap());
+// // const y2: Year = new Year(1900);
+// // console.log(y2.isLeap());
+// // const y3: Year = new Year(2000);
+// // console.log(y3.isLeap());
+// // Function type
+// export function isLeap(year: number): boolean {
+// 	return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+// }
+// // Arrow function
+// export const isLeapArrow = (year: number): boolean =>
+// 	(year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+// // console.log(isLeapArrow);
+// // ==========================//================DARTS GAMES===========//============================
+// export const score = (x = 0, y = 0) => {
+// 	const cordinates = x ** 2 + y ** 2;
+// 	return cordinates > 100 ? 0 : cordinates > 25 ? 1 : cordinates > 1 ? 5 : 10;
+// };
+// export class Darts {
+// 	static score(x = 0, y = 0) {
+// 		const cordinates = x ** 2 + y ** 2;
+// 		return cordinates > 100 ? 0 : cordinates > 25 ? 1 : cordinates > 1 ? 5 : 10;
+// 	}
+// }
+// function reversed(str: string): string {
+// 	return str.split('').reverse().join('');
+// }
+// // ==========================//================LINE UP===========//============================
+// export function format(name: string, number: number): string {
+// 	let suffix = 'th';
+// 	if (number % 100 < 11 || number % 100 > 13) {
+// 		if (number % 10 === 1) suffix = 'st';
+// 		else if (number % 10 === 2) suffix = 'nd';
+// 		else if (number % 10 === 3) suffix = 'rd';
+// 	}
+// 	return `${name}, you are the ${number}${suffix} customer we serve today, Thank you!`;
+// }
+// // ==========================//================SPACE AGE PROBLEM===========//============================
+// export const PLANENT: Record<string, number> = {
+// 	mercury: 0.2408467,
+// 	venus: 0.61519726,
+// 	earth: 1.0,
+// 	mars: 1.8808158,
+// 	jupiter: 11.862615,
+// 	saturn: 29.447498,
+// 	uranus: 84.016846,
+// 	neptune: 164.79132,
+// };
+// export function age(planetName: string, earthAge: number): number {
+// 	const period = PLANENT[planetName];
+// 	return +(earthAge / 35_557_600 / period).toFixed(2);
+// }
+// // ==========================//================REVERSE PROBLEM===========//============================
+// export function reverse(str: string): string {
+// 	return str.split('').reverse().join('');
+// }
+// export const teskari = (harf: string): string =>
+// 	harf.split('').reverse().join('');
+function reversed(mgs) {
+    return [...mgs].reverse().join('');
+}
+// ==========================//================ NAMESPACE ===========//============================
+var Utils;
+(function (Utils) {
+    function log(text, color, fontSize) {
+        if (fontSize) {
+            console.log(`%c${text}`, `color: ${color}; font-size: ${fontSize}`);
+        }
+        else {
+            console.log(`%c${text}`, `color: ${color};`);
+        }
     }
-    colorCode(color) {
-        return this.COLORS.indexOf(color);
-    }
-    colors() {
-        return this.COLORS;
-    }
-}
-const resistor = new ResistorColor();
-// console.log(resistor.colorCode('green'));
-// console.log(resistor.colors());
-//=================================================================
-//Pangramm (The quick brown fox jumps over the lazy dog.)
-function isPangram(sentence) {
-    const letters = new Set(sentence.toLowerCase().replace(/[^a-z]/g, ''));
-    return letters.size === 26;
-}
-const isPangarmArrow = (sentence) => new Set(sentence.toLowerCase().replace(/[^a-z]/g, '')).size === 26;
-exports.isPangarmArrow = isPangarmArrow;
-console.log(exports.isPangarmArrow);
-//=================================================================
-function toRna(dna) {
-    const map = {
-        G: 'C',
-        C: 'G',
-        T: 'A',
-        A: 'U',
-    };
-    return dna
-        .split('')
-        .map(letter => map[letter])
-        .join('');
-}
-const toRna2 = (dna) => dna
-    .split('')
-    .map(l => ({ G: 'C', C: 'G', T: 'A', A: 'U' })[l])
-    .join('');
-exports.toRna2 = toRna2;
-//ASOSIY ECHIM SHU
-const DNAtoRNA = new Map([
-    ['G', 'C'],
-    ['C', 'G'],
-    ['T', 'A'],
-    ['A', 'U'],
-]);
-function toRna3(dna) {
-    return [...dna]
-        .map(l => {
-        if (DNAtoRNA.has(l))
-            return DNAtoRNA.get(l);
-        else
-            throw new Error('Invalid input DNA.');
-    })
-        .join('');
-}
-class DNA {
-    static toRNA1(dna) {
-        const map = {
-            G: 'C',
-            C: 'G',
-            T: 'A',
-            A: 'U',
-        };
-        return dna
-            .split('')
-            .map(n => map[n])
-            .join('');
-    }
-}
-// console.log(toRna('GCTA'));
-//=================================================================
-// ANIQ YECHIM
-class DnDCharacter {
-    constructor() {
-        this.strength = DnDCharacter.generateAbilityScore();
-        this.dexterity = DnDCharacter.generateAbilityScore();
-        this.constitution = DnDCharacter.generateAbilityScore();
-        this.intelligence = DnDCharacter.generateAbilityScore();
-        this.wisdom = DnDCharacter.generateAbilityScore();
-        this.charisma = DnDCharacter.generateAbilityScore();
-        this.hitpoints = 10 + DnDCharacter.getModifierFor(this.constitution);
-    }
-    static generateAbilityScore() {
-        let dice = [...Array(4)].map(_ => DnDCharacter.rollDie());
-        dice.sort((a, b) => a - b);
-        return dice.slice(1).reduce((a, b) => a + b);
-    }
-    static rollDie() {
-        return Math.floor(Math.random() * 6) + 1;
-    }
-    static getModifierFor(score) {
-        return Math.floor((score - 10) / 2);
-    }
-}
-exports.DnDCharacter = DnDCharacter;
-//=================================================================
-//=================================================================
-function hello() {
-    return 'Hello, World!';
-}
-// Arrow function
-const helloArrow = () => 'Hello, World!';
-exports.helloArrow = helloArrow;
-//=================================================================
-class twoFer {
-    constructor(name) {
-        this._name = '';
-        this._name = name;
-    }
-    seyOneMe() {
-        return `One for ${this._name}, One for me`;
-    }
-}
-const forYou = new twoFer('you');
-console.log(forYou.seyOneMe());
-function twoFer2(name) {
-    return `One for ${name || 'you'}, one for me`;
-}
-function twoFer3(name = 'you') {
-    return `One for ${name}, one for me.`;
-}
-// Arrow function
-const twoFer4 = (name = 'you') => `One for ${name}, one for me.`;
-exports.twoFer4 = twoFer4;
-// export const sdf=(name:string ='you'):string{
-//     return `One for${name}, one for me.`
-//=================================================================
-//=================================================================
-class Year {
-    constructor(year) {
-        this.year = year;
-    }
-    isLeap() {
-        if (this.year % 4 !== 0)
-            return false;
-        if (this.year % 100 !== 0)
-            return true;
-        return this.year % 400 === 0;
-    }
-}
-// const y1: Year = new Year(1997);
-// console.log(y1.isLeap());
-// const y2: Year = new Year(1900);
-// console.log(y2.isLeap());
-// const y3: Year = new Year(2000);
-// console.log(y3.isLeap());
-// Function type
-function isLeap(year) {
-    return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
-}
-// Arrow function
-const isLeapArrow = (year) => (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
-exports.isLeapArrow = isLeapArrow;
-// console.log(isLeapArrow);
-// ==========================//================DARTS GAMES===========//============================
-const score = (x = 0, y = 0) => {
-    const cordinates = x ** 2 + y ** 2;
-    return cordinates > 100 ? 0 : cordinates > 25 ? 1 : cordinates > 1 ? 5 : 10;
-};
-exports.score = score;
-class Darts {
-    static score(x = 0, y = 0) {
-        const cordinates = x ** 2 + y ** 2;
-        return cordinates > 100 ? 0 : cordinates > 25 ? 1 : cordinates > 1 ? 5 : 10;
-    }
-}
-exports.Darts = Darts;
-function reversed(str) {
-    return str.split('').reverse().join('');
-}
-// ==========================//================LINE UP===========//============================
-function format(name, number) {
-    let suffix = 'th';
-    if (number % 100 < 11 || number % 100 > 13) {
-        if (number % 10 === 1)
-            suffix = 'st';
-        else if (number % 10 === 2)
-            suffix = 'nd';
-        else if (number % 10 === 3)
-            suffix = 'rd';
-    }
-    return `${name}, you are the ${number}${suffix} customer we serve today, Thank you!`;
-}
-// ==========================//================SPACE AGE PROBLEM===========//============================
-exports.PLANENT = {
-    mercury: 0.2408467,
-    venus: 0.61519726,
-    earth: 1.0,
-    mars: 1.8808158,
-    jupiter: 11.862615,
-    saturn: 29.447498,
-    uranus: 84.016846,
-    neptune: 164.79132,
-};
-function age(planetName, earthAge) {
-    const period = exports.PLANENT[planetName];
-    return +(earthAge / 35557600 / period).toFixed(2);
-}
-// ==========================//================REVERSE PROBLEM===========//============================
-function reverse(str) {
-    return str.split('').reverse().join('');
-}
-const teskari = (harf) => harf.split('').reverse().join('');
-exports.teskari = teskari;
+    Utils.log = log;
+    log('Salom TypeScript', 'green', '40px');
+})(Utils || (Utils = {}));
+Utils.log('Assalomu alaykum', 'red', '24px');
 //# sourceMappingURL=index.js.map
